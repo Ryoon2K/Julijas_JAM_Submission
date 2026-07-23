@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Julijas-JAM"
+config/features=PackedStringArray("4.7")
+config/icon="res://icon.svg"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+
+[importer_defaults]
+
+aseprite_wizard.plugin.static-texture={
+"first_frame_only": true,
+"layer/exclude_layers_pattern": "",
+"layer/only_visible_layers": false,
+"layer/split_layers": false,
+"sheet/scale": 1,
+"sheet/sheet_columns": 12,
+"sheet/sheet_type": "packed"
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

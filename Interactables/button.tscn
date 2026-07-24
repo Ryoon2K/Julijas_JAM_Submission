@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bpv8yyap22hsd"]
+
+[ext_resource type="Script" uid="uid://daeptgs5rqn4j" path="res://Interactables/Scripts/button.gd" id="1_n3u43"]
+[ext_resource type="Texture2D" uid="uid://davxoy8feypkm" path="res://icon.svg" id="2_ouds2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rw38"]
+size = Vector2(32, 32)
+
+[node name="Button" type="Node2D" unique_id=351434087 node_paths=PackedStringArray("area", "sprite_on", "sprite_off")]
+script = ExtResource("1_n3u43")
+area = NodePath("Area2D")
+sprite_on = NodePath("SpriteOn")
+sprite_off = NodePath("SpriteOff")
+
+[node name="SpriteOn" type="Sprite2D" parent="." unique_id=277818701]
+visible = false
+position = Vector2(0, -8)
+scale = Vector2(0.25, 0.125)
+texture = ExtResource("2_ouds2")
+
+[node name="SpriteOff" type="Sprite2D" parent="." unique_id=518036213]
+position = Vector2(0, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ouds2")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": false,
+"pending_changes": {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "",
+"source_uid": -1
+}
+}
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2041749863]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=636246201]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_6rw38")

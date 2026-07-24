@@ -32,12 +32,13 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/softbody2d/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
 "res://Assets/": "teal",
+"res://Interactables/Scripts/": "yellow",
 "res://Scenes/": "red",
 "res://Scripts/": "yellow"
 }
@@ -53,6 +54,13 @@ aseprite_wizard.plugin.static-texture={
 "sheet/sheet_columns": 12,
 "sheet/sheet_type": "packed"
 }
+
+[layer_names]
+
+2d_physics/layer_1="Environment"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Interactables"
+2d_physics/layer_4="Rigidbodies"
 
 [rendering]
 

@@ -38,6 +38,7 @@ enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
 folder_colors={
 "res://Assets/": "teal",
+"res://Interactables/Scripts/": "yellow",
 "res://Scenes/": "red",
 "res://Scripts/": "yellow"
 }

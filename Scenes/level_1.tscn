@@ -4,26 +4,53 @@
 [ext_resource type="PackedScene" uid="uid://bpv8yyap22hsd" path="res://Interactables/button.tscn" id="2_8ffim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
-size = Vector2(1181, 68)
+size = Vector2(1277.5, 68)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rw38"]
 
 [node name="Level1" type="Node2D" unique_id=909299494]
 
 [node name="remy" parent="." unique_id=1970152106 instance=ExtResource("1_vk57k")]
-position = Vector2(536, 234)
+position = Vector2(428, 254.00002)
 rotation = 0.32276383
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=316158404]
+position = Vector2(1279, 84)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1513817206]
+shape = SubResource("RectangleShape2D_wp5od")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2" unique_id=1179981197]
+scale = Vector2(1281, 70.99999)
+mesh = SubResource("BoxMesh_6rw38")
+metadata/_edit_lock_ = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=199269085]
+position = Vector2(640, 685)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1343666855]
-position = Vector2(611.5, 529)
 shape = SubResource("RectangleShape2D_wp5od")
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1332993868]
-position = Vector2(611.9999, 528.5)
-scale = Vector2(1183.9999, 70.99999)
+scale = Vector2(1281, 70.99999)
 mesh = SubResource("BoxMesh_6rw38")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1707969278]
+position = Vector2(-4, 80)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1339007158]
+shape = SubResource("RectangleShape2D_wp5od")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3" unique_id=934519240]
+scale = Vector2(1281, 70.99999)
+mesh = SubResource("BoxMesh_6rw38")
+metadata/_edit_lock_ = true
 
 [node name="Button" parent="." unique_id=351434087 instance=ExtResource("2_8ffim")]
-position = Vector2(744, 493)
+position = Vector2(933, 651)

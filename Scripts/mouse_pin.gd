@@ -15,6 +15,7 @@ func _ready() -> void:
 	mouse_pin.node_a = mouse_pin.get_path_to(fake_body)
 	# Connect the input_event signal to its function
 	for bone in soft_body_2d.get_rigid_bodies():
+		bone.rigidbody.input_pickable = true
 		bone.rigidbody.input_event.connect(_on_input_event.bind(bone.rigidbody))
 
 

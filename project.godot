@@ -43,6 +43,10 @@ folder_colors={
 "res://Scripts/": "yellow"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [importer_defaults]
 
 aseprite_wizard.plugin.static-texture={

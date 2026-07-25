@@ -1,0 +1,29 @@
+[gd_scene format=4 uid="uid://cxlmp6mlx58ej"]
+
+[ext_resource type="TileSet" uid="uid://bs8pbq21an0qj" path="res://Resources/tile_set.tres" id="1_t7h1v"]
+[ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="2_e06xn"]
+[ext_resource type="PackedScene" uid="uid://dggblvac16vx6" path="res://Interactables/cheese.tscn" id="3_e273j"]
+
+[node name="LevelTemplate" type="Node2D" unique_id=31897842]
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=356863740]
+texture_filter = 1
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAD//wgAAAAIAAUAAAD//wcAAAAIAAUAAAD//wYAAAAIAAUAAAD//wUAAAAIAAUAAAD//wQAAAAIAAUAAAD//wMAAAAIAAUAAAD//wIAAAAIAAUAAAD//wEAAAAIAAUAAAD//wAAAAAIAAUAAAD/////AAAIAAUAAAAAAP//AAAIAAUAAAABAP//AAAIAAUAAAACAP//AAAIAAUAAAADAP//AAAIAAUAAAAEAP//AAAIAAUAAAAFAP//AAAIAAUAAAAGAP//AAAIAAUAAAAHAP//AAAIAAUAAAAIAP//AAAIAAUAAAAJAP//AAAIAAUAAAAKAP//AAAIAAUAAAALAP//AAAIAAUAAAAMAP//AAAIAAUAAAANAP//AAAIAAUAAAAOAP//AAAIAAUAAAAPAP//AAAIAAUAAAAQAP//AAAIAAUAAAAQAAAAAAAIAAUAAAAQAAEAAAAIAAUAAAAQAAIAAAAIAAUAAAAQAAMAAAAIAAUAAAAQAAQAAAAIAAUAAAAQAAUAAAAIAAUAAAAQAAYAAAAIAAUAAAAQAAcAAAAIAAUAAAAQAAgAAAAIAAUAAAAQAAkAAAAIAAUAAAAPAAkAAAAIAAUAAAAOAAkAAAAIAAUAAAANAAkAAAAIAAUAAAAMAAkAAAAIAAUAAAALAAkAAAAIAAUAAAAKAAkAAAAIAAUAAAAJAAkAAAAIAAUAAAAIAAkAAAAIAAUAAAAHAAkAAAAIAAUAAAAGAAkAAAAIAAUAAAAFAAkAAAAIAAUAAAAEAAkAAAAIAAUAAAADAAkAAAAIAAUAAAACAAkAAAAIAAUAAAABAAkAAAAIAAUAAAAAAAkAAAAIAAUAAAD//wkAAAAIAAUAAAA=")
+tile_set = ExtResource("1_t7h1v")
+
+[node name="Decor" type="TileMapLayer" parent="." unique_id=602132896]
+texture_filter = 1
+scale = Vector2(5, 5)
+tile_set = ExtResource("1_t7h1v")
+
+[node name="Decor2" type="TileMapLayer" parent="." unique_id=1606357100]
+texture_filter = 1
+scale = Vector2(5, 5)
+tile_set = ExtResource("1_t7h1v")
+
+[node name="remy" parent="." unique_id=1970152106 instance=ExtResource("2_e06xn")]
+position = Vector2(241, 395)
+
+[node name="Cheese" parent="." unique_id=955090490 instance=ExtResource("3_e273j")]
+position = Vector2(942, 363)

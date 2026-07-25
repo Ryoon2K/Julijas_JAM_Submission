@@ -55,6 +55,13 @@ aseprite_wizard.plugin.static-texture={
 "sheet/sheet_type": "packed"
 }
 
+[layer_names]
+
+2d_physics/layer_1="Environment"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Interactables"
+2d_physics/layer_4="Rigidbodies"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

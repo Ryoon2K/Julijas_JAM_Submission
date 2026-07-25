@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bakn7k6e5wncc"]
+
+[ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="1_vk57k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
+size = Vector2(1181, 68)
+
+[node name="Level1" type="Node2D" unique_id=909299494]
+
+[node name="remy" parent="." unique_id=1970152106 instance=ExtResource("1_vk57k")]
+position = Vector2(536, 234)
+rotation = 0.32276383
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=199269085]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1343666855]
+position = Vector2(611.5, 529)
+shape = SubResource("RectangleShape2D_wp5od")

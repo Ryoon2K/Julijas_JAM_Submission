@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://1bog3aj03ydd"]
+
+[ext_resource type="Script" uid="uid://dw38enohh7gco" path="res://Interactables/Scripts/squish_wall.gd" id="1_mfcr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5last"]
+size = Vector2(20, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxbdc"]
+size = Vector2(20, 25)
+
+[sub_resource type="Animation" id="Animation_mfcr5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -26)]
+}
+
+[sub_resource type="Animation" id="Animation_mxbdc"]
+resource_name = "move_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -382.035), Vector2(0, -248.35)]
+}
+
+[sub_resource type="Animation" id="Animation_4ykka"]
+resource_name = "move_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -248.35), Vector2(0, -382.035)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_brwhi"]
+_data = {
+&"RESET": SubResource("Animation_mfcr5"),
+&"move_down": SubResource("Animation_mxbdc"),
+&"move_up": SubResource("Animation_4ykka")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7wqci"]
+animation = &"move_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_47qri"]
+animation = &"move_down"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_i6b5y"]
+input_0/name = "up"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "down"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6rw38"]
+graph_offset = Vector2(-475.3307, 52.599487)
+nodes/Transition/node = SubResource("AnimationNodeTransition_i6b5y")
+nodes/Transition/position = Vector2(20, 140)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_47qri")
+nodes/Animation/position = Vector2(-220, 260)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_7wqci")
+"nodes/Animation 2/position" = Vector2(-220, 100)
+node_connections = [&"output", 0, &"Transition", &"Transition", 0, &"Animation 2", &"Transition", 1, &"Animation"]
+
+[node name="SquishWall" type="Node2D" unique_id=880866997 node_paths=PackedStringArray("at")]
+script = ExtResource("1_mfcr5")
+at = NodePath("AnimationTree")
+
+[node name="Bottom" type="StaticBody2D" parent="." unique_id=551240579]
+scale = Vector2(10.787548, 10.787548)
+collision_mask = 0
+
+[node name="Polygon2D2" type="Polygon2D" parent="Bottom" unique_id=2003640448]
+position = Vector2(0, 15.017312)
+polygon = PackedVector2Array(-10.011543, -24.009161, 10.011543, -24.009161, 10, -15.022, -10.001, -15.022)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=1407267122]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_5last")
+
+[node name="Top" type="StaticBody2D" parent="." unique_id=2131183223]
+position = Vector2(0, -26)
+scale = Vector2(10.787548, 10.787548)
+collision_mask = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="Top" unique_id=1621540375]
+position = Vector2(0, 23.021915)
+polygon = PackedVector2Array(-10, -40.023, 10, -40.022, 10, -15.022, -10.001, -15.022)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=1827302189]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_mxbdc")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2021892651]
+libraries/ = SubResource("AnimationLibrary_brwhi")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1916230781]
+tree_root = SubResource("AnimationNodeBlendTree_6rw38")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Transition/current_state = "down"
+parameters/Transition/transition_request = ""
+parameters/Transition/current_index = 1

@@ -2,55 +2,58 @@
 
 [ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://bpv8yyap22hsd" path="res://Interactables/button.tscn" id="2_8ffim"]
+[ext_resource type="PackedScene" uid="uid://1bog3aj03ydd" path="res://Interactables/squish_wall.tscn" id="3_xfk5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
 size = Vector2(1277.5, 68)
 
-[sub_resource type="BoxMesh" id="BoxMesh_6rw38"]
-
 [node name="Level1" type="Node2D" unique_id=909299494]
 
 [node name="remy" parent="." unique_id=1970152106 instance=ExtResource("1_vk57k")]
-position = Vector2(428, 254.00002)
+position = Vector2(255.00003, 263)
 rotation = 0.32276383
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=316158404]
-position = Vector2(1279, 84)
-rotation = 1.5707964
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1513817206]
-shape = SubResource("RectangleShape2D_wp5od")
-metadata/_edit_lock_ = true
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2" unique_id=1179981197]
-scale = Vector2(1281, 70.99999)
-mesh = SubResource("BoxMesh_6rw38")
-metadata/_edit_lock_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=199269085]
+[node name="StaticFloor" type="StaticBody2D" parent="." unique_id=199269085]
 position = Vector2(640, 685)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1343666855]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticFloor" unique_id=1343666855]
 shape = SubResource("RectangleShape2D_wp5od")
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1332993868]
-scale = Vector2(1281, 70.99999)
-mesh = SubResource("BoxMesh_6rw38")
+[node name="Polygon2D3" type="Polygon2D" parent="StaticFloor" unique_id=1217524748]
+position = Vector2(-80, -4)
+rotation = -1.5707964
+color = Color(0.2884235, 0.44738787, 0.3003033, 1)
+polygon = PackedVector2Array(-38, -559, -38, 719, 30, 719, 30, -559)
+
+[node name="StaticRWall" type="StaticBody2D" parent="." unique_id=316158404]
+position = Vector2(1279, 80)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticRWall" unique_id=1513817206]
+shape = SubResource("RectangleShape2D_wp5od")
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1707969278]
+[node name="Polygon2D2" type="Polygon2D" parent="StaticRWall" unique_id=1367452238]
+position = Vector2(-80, -4)
+rotation = -1.5707964
+polygon = PackedVector2Array(-38, -559, -38, 719, 30, 719, 30, -559)
+
+[node name="StaticLWall" type="StaticBody2D" parent="." unique_id=1707969278]
 position = Vector2(-4, 80)
 rotation = 1.5707964
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1339007158]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticLWall" unique_id=1339007158]
 shape = SubResource("RectangleShape2D_wp5od")
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3" unique_id=934519240]
-scale = Vector2(1281, 70.99999)
-mesh = SubResource("BoxMesh_6rw38")
-metadata/_edit_lock_ = true
+[node name="Polygon2D" type="Polygon2D" parent="StaticLWall" unique_id=683418153]
+position = Vector2(-80, -3.9999964)
+rotation = -1.5707964
+polygon = PackedVector2Array(-38, -559, -38, 719, 30, 719, 30, -559)
 
 [node name="Button" parent="." unique_id=351434087 instance=ExtResource("2_8ffim")]
-position = Vector2(933, 651)
+position = Vector2(1180, 650)
+
+[node name="SquishWall" parent="." unique_id=880866997 instance=ExtResource("3_xfk5q")]
+position = Vector2(707, 651)

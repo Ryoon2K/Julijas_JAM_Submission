@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var mouse_pin: PinJoint2D = $MousePin
+@onready var mouse_pin: DampedSpringJoint2D = $MousePin
 @onready var fake_body: StaticBody2D = $MousePin/FakeBody
 @onready var soft_body_2d: SoftBody2D = $SoftBody2D
 

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://bpv8yyap22hsd" path="res://Interactables/button.tscn" id="2_8ffim"]
 [ext_resource type="PackedScene" uid="uid://1bog3aj03ydd" path="res://Interactables/squish_wall.tscn" id="3_xfk5q"]
+[ext_resource type="Script" uid="uid://bd8jdkexxfljr" path="res://Scenes/button.gd" id="4_7p6j4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
 size = Vector2(1277.5, 68)
@@ -54,6 +55,32 @@ polygon = PackedVector2Array(-38, -559, -38, 719, 30, 719, 30, -559)
 
 [node name="Button" parent="." unique_id=351434087 instance=ExtResource("2_8ffim")]
 position = Vector2(1180, 650)
+toggle_button = true
 
 [node name="SquishWall" parent="." unique_id=880866997 instance=ExtResource("3_xfk5q")]
+unique_name_in_owner = true
 position = Vector2(707, 651)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1841492957]
+
+[node name="Control" type="Control" parent="UI" unique_id=1340771566]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="UI/Control" unique_id=1389607046]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7632812
+anchor_top = 0.06944445
+anchor_right = 0.8796875
+anchor_bottom = 0.2125
+text = "Hydraulic Press"
+script = ExtResource("4_7p6j4")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_pressed" from="Button" to="SquishWall" method="change_state"]
+[connection signal="pressed" from="UI/Control/Button" to="UI/Control/Button" method="_on_pressed"]

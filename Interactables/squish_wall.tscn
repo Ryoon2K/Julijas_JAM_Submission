@@ -88,7 +88,7 @@ nodes/Animation/position = Vector2(-220, 260)
 "nodes/Animation 2/position" = Vector2(-220, 100)
 node_connections = [&"output", 0, &"Transition", &"Transition", 0, &"Animation 2", &"Transition", 1, &"Animation"]
 
-[node name="SquishWall" type="Node2D" unique_id=880866997 node_paths=PackedStringArray("at")]
+[node name="HydraulicPress" type="Node2D" unique_id=880866997 node_paths=PackedStringArray("at")]
 script = ExtResource("1_mfcr5")
 at = NodePath("AnimationTree")
 

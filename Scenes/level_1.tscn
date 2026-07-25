@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bpv8yyap22hsd" path="res://Interactables/button.tscn" id="2_8ffim"]
 [ext_resource type="PackedScene" uid="uid://1bog3aj03ydd" path="res://Interactables/squish_wall.tscn" id="3_xfk5q"]
 [ext_resource type="Script" uid="uid://bd8jdkexxfljr" path="res://Scenes/button.gd" id="4_7p6j4"]
+[ext_resource type="PackedScene" uid="uid://dggblvac16vx6" path="res://Interactables/cheese.tscn" id="5_6444e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
 size = Vector2(1277.5, 68)
@@ -70,6 +71,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Button" type="Button" parent="UI/Control" unique_id=1389607046]
 layout_mode = 1
@@ -81,6 +83,10 @@ anchor_bottom = 0.2125
 text = "Hydraulic Press"
 script = ExtResource("4_7p6j4")
 metadata/_edit_use_anchors_ = true
+
+[node name="Cheese" parent="UI" unique_id=955090490 instance=ExtResource("5_6444e")]
+position = Vector2(968, 467)
+scale = Vector2(0.4196881, 0.4196881)
 
 [connection signal="button_pressed" from="Button" to="SquishWall" method="change_state"]
 [connection signal="pressed" from="UI/Control/Button" to="UI/Control/Button" method="_on_pressed"]

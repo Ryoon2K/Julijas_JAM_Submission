@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bakn7k6e5wncc"]
 
 [ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="1_vk57k"]
+[ext_resource type="PackedScene" uid="uid://bpv8yyap22hsd" path="res://Interactables/button.tscn" id="2_8ffim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
 size = Vector2(1181, 68)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6rw38"]
 
 [node name="Level1" type="Node2D" unique_id=909299494]
 
@@ -16,3 +19,11 @@ rotation = 0.32276383
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1343666855]
 position = Vector2(611.5, 529)
 shape = SubResource("RectangleShape2D_wp5od")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1332993868]
+position = Vector2(611.9999, 528.5)
+scale = Vector2(1183.9999, 70.99999)
+mesh = SubResource("BoxMesh_6rw38")
+
+[node name="Button" parent="." unique_id=351434087 instance=ExtResource("2_8ffim")]
+position = Vector2(744, 493)

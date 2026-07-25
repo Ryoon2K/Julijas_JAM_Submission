@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://daeptgs5rqn4j" path="res://Interactables/Scripts/button.gd" id="1_n3u43"]
 [ext_resource type="Texture2D" uid="uid://davxoy8feypkm" path="res://icon.svg" id="2_ouds2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rw38"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouds2"]
+size = Vector2(32, 21)
 
 [node name="Button" type="Node2D" unique_id=351434087 node_paths=PackedStringArray("area", "sprite_on", "sprite_off")]
 script = ExtResource("1_n3u43")
@@ -51,5 +51,5 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=636246201]
-position = Vector2(0, -16)
-shape = SubResource("RectangleShape2D_6rw38")
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_ouds2")

@@ -1,20 +1,26 @@
 [gd_scene format=3 uid="uid://bakn7k6e5wncc"]
 
-[ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="1_vk57k"]
-[ext_resource type="PackedScene" uid="uid://bpv8yyap22hsd" path="res://Interactables/button.tscn" id="2_8ffim"]
-[ext_resource type="PackedScene" uid="uid://owaoywesrwb2" path="res://Scenes/bingbong.tscn" id="3_6444e"]
-[ext_resource type="PackedScene" uid="uid://1bog3aj03ydd" path="res://Interactables/squish_wall.tscn" id="3_xfk5q"]
-[ext_resource type="Script" uid="uid://bd8jdkexxfljr" path="res://Scenes/button.gd" id="4_7p6j4"]
-[ext_resource type="PackedScene" uid="uid://dggblvac16vx6" path="res://Interactables/cheese.tscn" id="5_6444e"]
+[ext_resource type="Script" uid="uid://hv1ramw6hmeq" path="res://Scripts/init.gd" id="1_wpw8k"]
+[ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="2_j2wlq"]
+[ext_resource type="PackedScene" uid="uid://bpv8yyap22hsd" path="res://Interactables/button.tscn" id="3_6yop6"]
+[ext_resource type="PackedScene" uid="uid://owaoywesrwb2" path="res://Scenes/bingbong.tscn" id="4_s5h6m"]
+[ext_resource type="PackedScene" uid="uid://1bog3aj03ydd" path="res://Interactables/squish_wall.tscn" id="5_3aevr"]
+[ext_resource type="Script" uid="uid://bd8jdkexxfljr" path="res://Scenes/button.gd" id="6_xdw8u"]
+[ext_resource type="PackedScene" uid="uid://dggblvac16vx6" path="res://Interactables/cheese.tscn" id="7_a51xs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
 size = Vector2(1277.5, 68)
 
-[node name="Level1" type="Node2D" unique_id=909299494]
+[node name="Sandbox" type="Node2D" unique_id=909299494]
+script = ExtResource("1_wpw8k")
 
-[node name="remy" parent="." unique_id=1970152106 instance=ExtResource("1_vk57k")]
+[node name="remy" parent="." unique_id=1970152106 instance=ExtResource("2_j2wlq")]
 position = Vector2(255.00003, 263)
 rotation = 0.32276383
+
+[node name="bingbong" parent="." unique_id=1545461660 instance=ExtResource("4_s5h6m")]
+position = Vector2(806, -130)
+scale = Vector2(0.4776129, 0.4776129)
 
 [node name="StaticFloor" type="StaticBody2D" parent="." unique_id=199269085]
 position = Vector2(640, 685)
@@ -55,14 +61,11 @@ position = Vector2(-80, -3.9999964)
 rotation = -1.5707964
 polygon = PackedVector2Array(-38, -559, -38, 719, 30, 719, 30, -559)
 
-[node name="Button" parent="." unique_id=351434087 instance=ExtResource("2_8ffim")]
+[node name="Button" parent="." unique_id=351434087 instance=ExtResource("3_6yop6")]
 position = Vector2(1180, 650)
 toggle_button = true
 
-[node name="remy2" parent="." unique_id=1251113779 instance=ExtResource("3_6444e")]
-position = Vector2(834, -253)
-
-[node name="SquishWall" parent="." unique_id=880866997 instance=ExtResource("3_xfk5q")]
+[node name="SquishWall" parent="." unique_id=880866997 instance=ExtResource("5_3aevr")]
 unique_name_in_owner = true
 position = Vector2(707, 651)
 
@@ -85,10 +88,10 @@ anchor_top = 0.06944445
 anchor_right = 0.8796875
 anchor_bottom = 0.2125
 text = "Hydraulic Press"
-script = ExtResource("4_7p6j4")
+script = ExtResource("6_xdw8u")
 metadata/_edit_use_anchors_ = true
 
-[node name="Cheese" parent="UI" unique_id=955090490 instance=ExtResource("5_6444e")]
+[node name="Cheese" parent="UI" unique_id=955090490 instance=ExtResource("7_a51xs")]
 position = Vector2(968, 467)
 scale = Vector2(0.4196881, 0.4196881)
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1ns8lb1gi2m0"]
 
 [ext_resource type="Texture2D" uid="uid://davxoy8feypkm" path="res://icon.svg" id="1_63xcy"]
-[ext_resource type="Script" uid="uid://cgxtgcvyvklap" path="res://Scenes/mouse_pin.gd" id="1_yywsi"]
+[ext_resource type="Script" uid="uid://cgxtgcvyvklap" path="res://Scripts/mouse_pin.gd" id="1_yywsi"]
 [ext_resource type="Script" uid="uid://kol6k5y6rb8a" path="res://addons/softbody2d/softbody2d.gd" id="2_yywsi"]
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_63xcy"]

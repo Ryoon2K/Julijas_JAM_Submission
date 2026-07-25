@@ -8,9 +8,10 @@ extends Node2D
 
 var is_dragging = false
 var picked_bone: RigidBody2D
-
+var arrow = load("res://Assets/Cursor/cursor.svg")
 
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(arrow)
 	# Set the node_a to a static body without a collision, we only need it for the pin effect.
 	mouse_pin.node_a = mouse_pin.get_path_to(fake_body)
 	# Connect the input_event signal to its function

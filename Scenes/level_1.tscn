@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://bpv8yyap22hsd" path="res://Interactables/button.tscn" id="2_8ffim"]
+[ext_resource type="PackedScene" uid="uid://owaoywesrwb2" path="res://Scenes/bingbong.tscn" id="3_6444e"]
 [ext_resource type="PackedScene" uid="uid://1bog3aj03ydd" path="res://Interactables/squish_wall.tscn" id="3_xfk5q"]
 [ext_resource type="Script" uid="uid://bd8jdkexxfljr" path="res://Scenes/button.gd" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dggblvac16vx6" path="res://Interactables/cheese.tscn" id="5_6444e"]
@@ -57,6 +58,9 @@ polygon = PackedVector2Array(-38, -559, -38, 719, 30, 719, 30, -559)
 [node name="Button" parent="." unique_id=351434087 instance=ExtResource("2_8ffim")]
 position = Vector2(1180, 650)
 toggle_button = true
+
+[node name="remy2" parent="." unique_id=1251113779 instance=ExtResource("3_6444e")]
+position = Vector2(834, -253)
 
 [node name="SquishWall" parent="." unique_id=880866997 instance=ExtResource("3_xfk5q")]
 unique_name_in_owner = true

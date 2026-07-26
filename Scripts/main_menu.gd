@@ -26,7 +26,7 @@ func _ready() -> void:
 	pass
 
 func _unfreeze_bb() -> void:
-	if randi_range(0,10) < 10: return
+	if randi_range(0,3) < 3: return
 	for child:SoftBody2D.SoftBodyChild in bingbong.soft_body_2d.get_rigid_bodies():
 		var rigid:RigidBody2D = child.rigidbody
 		rigid.freeze = false

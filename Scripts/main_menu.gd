@@ -13,7 +13,10 @@ var levels_button_scene:PackedScene = preload("uid://coh5gnjtneyw0")
 
 
 func _ready() -> void:
-	remy.trap_scene.instantiate()
+	var trap:= remy.trap_scene.instantiate()
+	trap.visible = false
+	add_child(trap)
+	
 	_get_levels()
 	
 	for child:SoftBody2D.SoftBodyChild in bingbong.soft_body_2d.get_rigid_bodies():
@@ -22,6 +25,7 @@ func _ready() -> void:
 	
 	get_tree().create_timer(2.5).timeout.connect(_launch_rat)
 	get_tree().create_timer(8).timeout.connect(_unfreeze_bb)
+	get_tree().create_timer(5).timeout.connect(trap.free)
 	
 	pass
 
@@ -32,7 +36,6 @@ func _unfreeze_bb() -> void:
 		rigid.freeze = false
 
 func _launch_rat() -> void:
-	print("howdy")
 	for child:SoftBody2D.SoftBodyChild in remy.soft_body_2d.get_rigid_bodies():
 		var rigid:RigidBody2D = child.rigidbody
 		var direction:Vector2 = (cheese.global_position - rigid.global_position).normalized()

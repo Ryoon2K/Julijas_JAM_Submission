@@ -13,6 +13,7 @@ var levels_button_scene:PackedScene = preload("uid://coh5gnjtneyw0")
 
 
 func _ready() -> void:
+	remy.trap_scene.instantiate()
 	_get_levels()
 	
 	for child:SoftBody2D.SoftBodyChild in bingbong.soft_body_2d.get_rigid_bodies():

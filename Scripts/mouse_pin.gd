@@ -1,4 +1,4 @@
-extends Node2D
+class_name Remy extends Node2D
 
 var trap_scene:PackedScene = preload("uid://ynjfgbtexom8")
 var traps:Dictionary[RigidBody2D,TrapDecal]

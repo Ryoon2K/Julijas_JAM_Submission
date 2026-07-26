@@ -43,6 +43,8 @@ func _get_levels() -> void:
 	var levels_arr:= DirAccess.get_files_at(path)
 	
 	for level_path in levels_arr:
+		if level_path.contains(".remap"):level_path = level_path.trim_suffix(".remap")
+		
 		var level_button:LevelSelectButton = levels_button_scene.instantiate()
 		level_button.level_path = path+level_path
 		

@@ -80,6 +80,23 @@ expand_margin_top = 2.0
 expand_margin_right = 37.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v763k"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.84705883)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -157,7 +174,13 @@ expand_margin_top = 2.0
 expand_margin_right = 17.0
 expand_margin_bottom = 2.0
 
-[node name="MainMenu" type="CanvasLayer" unique_id=1451691721]
+[node name="MainMenu" type="Control" unique_id=2067249946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_48xlc")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=731253474]
@@ -171,7 +194,7 @@ tile_set = ExtResource("2_1ehe0")
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=2052132299]
 
 [node name="UI" type="Control" parent="." unique_id=1593550683]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -189,6 +212,7 @@ grow_vertical = 2
 [node name="PlayButton" type="Button" parent="UI/CenterContainer" unique_id=621821675]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_qqk0j")
@@ -198,19 +222,48 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_xg7my")
 theme_override_styles/focus = SubResource("StyleBoxFlat_wmo1h")
 text = "Play"
 
-[node name="GridContainer" type="GridContainer" parent="UI/CenterContainer" unique_id=853640734]
+[node name="Panel" type="Panel" parent="UI/CenterContainer" unique_id=1428658618]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(600, 500)
+custom_minimum_size = Vector2(610, 510)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v763k")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/CenterContainer/Panel" unique_id=1292746590]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/CenterContainer/Panel/MarginContainer" unique_id=822284851]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="UI/CenterContainer/Panel/MarginContainer/ScrollContainer" unique_id=853640734]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(570, 470)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
 
 [node name="BackButton" type="Button" parent="UI" unique_id=328514962]
 unique_name_in_owner = true
-layout_mode = 0
-anchor_left = 0.6359375
-anchor_top = 0.675
-anchor_right = 0.74296874
-anchor_bottom = 0.76666665
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7578125
+anchor_top = 0.67638886
+anchor_right = 0.8648437
+anchor_bottom = 0.76805556
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 42
 theme_override_styles/normal = SubResource("StyleBoxFlat_ce3w2")

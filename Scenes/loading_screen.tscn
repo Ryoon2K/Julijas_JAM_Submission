@@ -1,8 +1,8 @@
-[gd_scene format=4 uid="uid://dggblvac16vx6"]
+[gd_scene format=4 uid="uid://bpnhnfa8gmnjr"]
 
-[ext_resource type="Script" uid="uid://bwtvnpv0gdd17" path="res://Interactables/Scripts/cheese.gd" id="1_p8dlx"]
+[ext_resource type="Script" uid="uid://h77twhi37tqk" path="res://Scripts/loading_screen.gd" id="1_oobaa"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6rw38"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_h5lxv"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddqvq"]
@@ -25,7 +25,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_yrsky"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_oobaa"]
 resource_name = "cheese_Cube"
 _surfaces = [{
 "aabb": AABB(-0.7497378, -0.44048706, -1, 1.4994756, 0.88097405, 1.9700818),
@@ -43,7 +43,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fn71w")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rw38"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0t5xw"]
 albedo_color = Color(0.93404996, 0.6826991, 0.17831373, 1)
 metallic_specular = 0.79
 roughness = 0.3
@@ -83,50 +83,84 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0), Vector3(0, 3.1415927, 0), Vector3(0, 4.712389, 0), Vector3(0, 6.2831855, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fu6n"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nfm0g"]
 _data = {
 &"RESET": SubResource("Animation_yrsky"),
 &"spin": SubResource("Animation_p8dlx")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fu6n"]
-size = Vector2(145, 100)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6rw38"]
 
-[node name="Cheese" type="Node2D" unique_id=955090490 node_paths=PackedStringArray("ap")]
-script = ExtResource("1_p8dlx")
-ap = NodePath("SubViewport/AnimationPlayer")
+[node name="LoadingScreen" type="Control" unique_id=1123844653]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oobaa")
+metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1072601646]
-scale = Vector2(0.75, 0.75)
-texture = SubResource("ViewportTexture_6rw38")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=830981061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07910311, 0.07910311, 0.07910311, 1)
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=2002777683]
-own_world_3d = true
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1405991500]
+position = Vector2(626, 238)
+scale = Vector2(3, 3)
+texture = SubResource("ViewportTexture_h5lxv")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1375956604]
 transparent_bg = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport" unique_id=1621474012]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport" unique_id=861191860]
 transform = Transform3D(0.7891072, -0.37093374, 0.48961002, 0, 0.7970788, 0.60387534, -0.6142554, -0.47652236, 0.6289806, 4.9316874, 6.0826464, 6.335524)
 
-[node name="cheese" type="Node3D" parent="SubViewport" unique_id=667474633]
+[node name="cheese" type="Node3D" parent="SubViewport" unique_id=182933548]
 
-[node name="Cube" type="MeshInstance3D" parent="SubViewport/cheese" unique_id=1369317260]
+[node name="Cube" type="MeshInstance3D" parent="SubViewport/cheese" unique_id=1570752717]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2179411)
-mesh = SubResource("ArrayMesh_yrsky")
-surface_material_override/0 = SubResource("StandardMaterial3D_6rw38")
+mesh = SubResource("ArrayMesh_oobaa")
+surface_material_override/0 = SubResource("StandardMaterial3D_0t5xw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport" unique_id=220974474]
-libraries/ = SubResource("AnimationLibrary_8fu6n")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport" unique_id=2089369987]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_nfm0g")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=262226477]
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1919397581]
 transform = Transform3D(0.4771555, -0.26725385, 0.8371965, 0, 0.9526383, 0.30410573, -0.87881887, -0.14510572, 0.4545566, 5.255953, 1.9091877, 2.8537245)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1603572315]
-collision_layer = 0
-collision_mask = 2
-monitorable = false
+[node name="CenterContainer" type="VBoxContainer" parent="." unique_id=2043834779]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=852299679]
-position = Vector2(0.5, 4)
-shape = SubResource("RectangleShape2D_8fu6n")
+[node name="HSeparator" type="HSeparator" parent="CenterContainer" unique_id=857678778]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6rw38")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer" unique_id=1557259433]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6rw38")
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=1234107494]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "Loading..."
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="CenterContainer" unique_id=1834429024]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6rw38")

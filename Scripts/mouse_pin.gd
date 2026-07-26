@@ -1,12 +1,18 @@
 extends Node2D
 
+var trap_scene:PackedScene = preload("uid://ynjfgbtexom8")
+var traps:Dictionary[RigidBody2D,TrapDecal]
+
 @onready var mouse_pin: DampedSpringJoint2D = $MousePin
 @onready var fake_body: StaticBody2D = $MousePin/FakeBody
 @onready var soft_body_2d: SoftBody2D = $SoftBody2D
+@onready var trap_container: Node2D = %TrapContainer
 
 var is_dragging = false
 var picked_bone: RigidBody2D
 var isHoveredStack = [false]
+
+signal died
 
 func _ready() -> void:
 	soft_body_2d.joint_removed.connect(_on_joint_removed)
@@ -37,6 +43,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.button_index == MouseButton.MOUSE_BUTTON_RIGHT:
 			picked_bone.lock_rotation = not picked_bone.lock_rotation
 			picked_bone.freeze = not picked_bone.freeze
+			
+			if traps.has(picked_bone):
+				traps[picked_bone].free()
+				traps.erase(picked_bone)
+			else:
+				var trap:TrapDecal = trap_scene.instantiate()
+				traps[picked_bone] = trap
+				trap_container.add_child(trap)
+				trap.global_position = picked_bone.global_position
 		picked_bone = null
 		# Or unlock the rotation of the rigid body with
 #		rigid_body_2d.lock_rotation = false
@@ -58,6 +73,16 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int, bone: Ri
 		if event.button_index == MouseButton.MOUSE_BUTTON_RIGHT:
 			bone.lock_rotation = not bone.lock_rotation
 			bone.freeze = not bone.freeze
+			
+			if traps.has(bone):
+				traps[bone].free()
+				traps.erase(bone)
+			else:
+				var trap:TrapDecal = trap_scene.instantiate()
+				traps[bone] = trap
+				trap_container.add_child(trap)
+				trap.global_position = bone.global_position
+			
 
 func _on_focus( bone: RigidBody2D):
 	isHoveredStack.push_front(true)
@@ -71,5 +96,10 @@ func _on_blur():
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 func _on_joint_removed(rigid_body_a: SoftBody2D.SoftBodyChild, rigid_body_b: SoftBody2D.SoftBodyChild):
-	# TODO: Show death screen
+	soft_body_2d.joint_removed.disconnect(_on_joint_removed)
+	
 	soft_body_2d.break_distance_ratio = 0.1
+	
+	await get_tree().create_timer(2).timeout
+	
+	died.emit()

@@ -1,21 +1,20 @@
 [gd_scene format=3 uid="uid://yyaqgrs8q86o"]
 
 [ext_resource type="Script" uid="uid://bugxlemhwkwjw" path="res://Interactables/Scripts/door.gd" id="1_cpjwb"]
-[ext_resource type="TileSet" uid="uid://bs8pbq21an0qj" path="res://Resources/tile_set.tres" id="2_pyvbm"]
+[ext_resource type="Texture2D" uid="uid://dhh4dcfmdiob7" path="res://Assets/Textures/omen_ne_noor.png" id="2_pyvbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rw38"]
-size = Vector2(80, 320)
+size = Vector2(50, 320)
 
 [node name="Door" type="StaticBody2D" unique_id=347875973]
 collision_mask = 0
 script = ExtResource("1_cpjwb")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=705131464]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1760374220]
+modulate = Color(0.6315303, 0.6315303, 0.6315303, 1)
 texture_filter = 1
-position = Vector2(-40, 80)
 scale = Vector2(5, 5)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 2, 0, 8, 0, 5, 0, 0, 0, 0, 0, 253, 255, 0, 0, 42, 0, 9, 0, 0, 0, 0, 0, 254, 255, 2, 0, 8, 0, 5, 0, 0, 0, 0, 0, 255, 255, 2, 0, 8, 0, 5, 0, 0, 0)
-tile_set = ExtResource("2_pyvbm")
+texture = ExtResource("2_pyvbm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=624269757]
 shape = SubResource("RectangleShape2D_6rw38")

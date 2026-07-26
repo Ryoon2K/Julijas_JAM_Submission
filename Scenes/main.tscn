@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://cqlftot6f6e4x"]
 
 [ext_resource type="Script" uid="uid://hv1ramw6hmeq" path="res://Scripts/init.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://ckrm3moohpf2h" path="res://Scenes/MainMenu/main_menu.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bpnhnfa8gmnjr" path="res://Scenes/loading_screen.tscn" id="3_8gbba"]
 
 [node name="Main" type="Node" unique_id=226054636]
 script = ExtResource("1_jjgbg")
+
+[node name="GameLayer" type="Node" parent="." unique_id=1036679578]
+unique_name_in_owner = true
+
+[node name="MainMenu" parent="GameLayer" unique_id=2067249946 instance=ExtResource("2_bo1nx")]
+unique_name_in_owner = true
+
+[node name="LoadingLayer" type="CanvasLayer" parent="." unique_id=1261082013]
+
+[node name="LoadingScreen" parent="LoadingLayer" unique_id=1123844653 instance=ExtResource("3_8gbba")]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)

@@ -1,8 +1,200 @@
 [gd_scene format=4 uid="uid://cwhrhcmtc1eka"]
 
+[ext_resource type="Script" uid="uid://bwykruku185mb" path="res://Scripts/level.gd" id="1_iixi8"]
 [ext_resource type="TileSet" uid="uid://bs8pbq21an0qj" path="res://Resources/tile_set.tres" id="1_tlcug"]
 [ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="2_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://dggblvac16vx6" path="res://Interactables/cheese.tscn" id="3_3mqfk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cyadu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgxfi"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.51972955, 0.1915046, 0.1915046, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2509804, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5f3p6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.40792882, 0.13421291, 0.13421291, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2509804, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jv26f"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7827901, 0.386247, 0.386247, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2509804, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rb0md"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.52156866, 0.33131233, 0.19215685, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5ghp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.41, 0.24975833, 0.1353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwvp3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.78, 0.54794997, 0.3822, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afv7b"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.52156866, 0.33131233, 0.19215685, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7r2dd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.41, 0.24975833, 0.1353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2mw1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.78, 0.54794997, 0.3822, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rw38"]
 size = Vector2(1277, 127)
@@ -20,6 +212,185 @@ size = Vector2(45, 364)
 size = Vector2(274, 1656.75)
 
 [node name="Level1" type="Node2D" unique_id=158676916]
+script = ExtResource("1_iixi8")
+self_UID = "uid://cwhrhcmtc1eka"
+next_level_UID = "uid://gkqku4xoufm2"
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1877229963]
+
+[node name="GameOver" type="Control" parent="UILayer" unique_id=372025334]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UILayer/GameOver" unique_id=873401819]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14, 0.1162, 0.1162, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/GameOver" unique_id=1754960072]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="UILayer/GameOver/VBoxContainer" unique_id=1457582180]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cyadu")
+
+[node name="Label" type="Label" parent="UILayer/GameOver/VBoxContainer" unique_id=767196769]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8025197, 0.27987084, 0.27987084, 1)
+theme_override_colors/font_outline_color = Color(0.25009245, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 92
+text = "You Died"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UILayer/GameOver/VBoxContainer" unique_id=1114027305]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cyadu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/GameOver/VBoxContainer" unique_id=1649389540]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="RestartButton" type="Button" parent="UILayer/GameOver/VBoxContainer/VBoxContainer" unique_id=1524735308]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_xgxfi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5f3p6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jv26f")
+text = "Restart Level"
+
+[node name="HSeparator4" type="HSeparator" parent="UILayer/GameOver/VBoxContainer/VBoxContainer" unique_id=513765848]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cyadu")
+
+[node name="MenuButton" type="Button" parent="UILayer/GameOver/VBoxContainer/VBoxContainer" unique_id=791540598]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_xgxfi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5f3p6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jv26f")
+text = "Return to menu"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/GameOver/VBoxContainer" unique_id=433588423]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="UILayer/GameOver/VBoxContainer" unique_id=1117504671]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cyadu")
+
+[node name="LevelComplete" type="Control" parent="UILayer" unique_id=1139097871]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UILayer/LevelComplete" unique_id=1551850910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44738787, 0.3848411, 0.2442897, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/LevelComplete" unique_id=1173131487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="UILayer/LevelComplete/VBoxContainer" unique_id=964192747]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cyadu")
+
+[node name="WinLabel" type="Label" parent="UILayer/LevelComplete/VBoxContainer" unique_id=1357585527]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.634648, 0, 1)
+theme_override_colors/font_outline_color = Color(0.2509804, 0.07400112, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 76
+text = "You ate the cheese!"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UILayer/LevelComplete/VBoxContainer" unique_id=185231085]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cyadu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/LevelComplete/VBoxContainer" unique_id=473164686]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="NextLevel" type="Button" parent="UILayer/LevelComplete/VBoxContainer/VBoxContainer" unique_id=269997068]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_rb0md")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u5ghp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hwvp3")
+text = "Next Level"
+
+[node name="HSeparator4" type="HSeparator" parent="UILayer/LevelComplete/VBoxContainer/VBoxContainer" unique_id=1091465560]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cyadu")
+
+[node name="MenuButton" type="Button" parent="UILayer/LevelComplete/VBoxContainer/VBoxContainer" unique_id=85017743]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_afv7b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7r2dd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k2mw1")
+text = "Return to menu"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/LevelComplete/VBoxContainer" unique_id=1784399738]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="UILayer/LevelComplete/VBoxContainer" unique_id=724458896]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cyadu")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1151105376]
 texture_filter = 1
@@ -83,3 +454,10 @@ position = Vector2(223, 455)
 
 [node name="Cheese" parent="." unique_id=955090490 instance=ExtResource("3_3mqfk")]
 position = Vector2(1195, 360)
+
+[connection signal="pressed" from="UILayer/GameOver/VBoxContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UILayer/GameOver/VBoxContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="UILayer/LevelComplete/VBoxContainer/VBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="UILayer/LevelComplete/VBoxContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="died" from="remy" to="." method="_on_remy_died"]
+[connection signal="cheese_got" from="Cheese" to="." method="_on_cheese_cheese_got"]

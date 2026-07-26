@@ -1,29 +1,427 @@
 [gd_scene format=4 uid="uid://cxlmp6mlx58ej"]
 
+[ext_resource type="Script" uid="uid://bwykruku185mb" path="res://Scripts/level.gd" id="1_fypjr"]
 [ext_resource type="TileSet" uid="uid://bs8pbq21an0qj" path="res://Resources/tile_set.tres" id="1_t7h1v"]
 [ext_resource type="PackedScene" uid="uid://d1ns8lb1gi2m0" path="res://Scenes/remy.tscn" id="2_e06xn"]
 [ext_resource type="PackedScene" uid="uid://dggblvac16vx6" path="res://Interactables/cheese.tscn" id="3_e273j"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_fypjr"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_hbq6r"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_7kbhc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g30sg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fypjr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.51972955, 0.1915046, 0.1915046, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2509804, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf3fl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.40792882, 0.13421291, 0.13421291, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2509804, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbq6r"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7827901, 0.386247, 0.386247, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2509804, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kbhc"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.52156866, 0.33131233, 0.19215685, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj0tv"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.41, 0.24975833, 0.1353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka7v4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.78, 0.54794997, 0.3822, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1448s"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.52156866, 0.33131233, 0.19215685, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds0tp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.41, 0.24975833, 0.1353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uygrl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.78, 0.54794997, 0.3822, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.25, 0.10416667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Resource" id="Resource_g30sg"]
+script = ExtResource("7_7kbhc")
 
 [node name="LevelTemplate" type="Node2D" unique_id=31897842]
+script = ExtResource("1_fypjr")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1993321819]
+
+[node name="GameOver" type="Control" parent="UILayer" unique_id=68320767]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UILayer/GameOver" unique_id=311544829]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14, 0.1162, 0.1162, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/GameOver" unique_id=1801053728]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="UILayer/GameOver/VBoxContainer" unique_id=1538972496]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g30sg")
+
+[node name="Label" type="Label" parent="UILayer/GameOver/VBoxContainer" unique_id=275901061]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8025197, 0.27987084, 0.27987084, 1)
+theme_override_colors/font_outline_color = Color(0.25009245, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 92
+text = "You Died"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UILayer/GameOver/VBoxContainer" unique_id=714870385]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g30sg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/GameOver/VBoxContainer" unique_id=438332409]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="RestartButton" type="Button" parent="UILayer/GameOver/VBoxContainer/VBoxContainer" unique_id=2091700821]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fypjr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tf3fl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hbq6r")
+text = "Restart Level"
+
+[node name="HSeparator4" type="HSeparator" parent="UILayer/GameOver/VBoxContainer/VBoxContainer" unique_id=1723147891]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g30sg")
+
+[node name="MenuButton" type="Button" parent="UILayer/GameOver/VBoxContainer/VBoxContainer" unique_id=589205817]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fypjr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tf3fl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hbq6r")
+text = "Return to menu"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/GameOver/VBoxContainer" unique_id=1379636372]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="UILayer/GameOver/VBoxContainer" unique_id=1570750944]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g30sg")
+
+[node name="LevelComplete" type="Control" parent="UILayer" unique_id=1240720722]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UILayer/LevelComplete" unique_id=1852819830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44738787, 0.3848411, 0.2442897, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/LevelComplete" unique_id=1875392778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="UILayer/LevelComplete/VBoxContainer" unique_id=1434077296]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g30sg")
+
+[node name="WinLabel" type="Label" parent="UILayer/LevelComplete/VBoxContainer" unique_id=1432179802]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.634648, 0, 1)
+theme_override_colors/font_outline_color = Color(0.2509804, 0.07400112, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 84
+text = "You ate the cheese!"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UILayer/LevelComplete/VBoxContainer" unique_id=942462588]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g30sg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/LevelComplete/VBoxContainer" unique_id=165071947]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="NextLevel" type="Button" parent="UILayer/LevelComplete/VBoxContainer/VBoxContainer" unique_id=744305114]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7kbhc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yj0tv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ka7v4")
+text = "Next Level"
+
+[node name="HSeparator4" type="HSeparator" parent="UILayer/LevelComplete/VBoxContainer/VBoxContainer" unique_id=592777098]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g30sg")
+
+[node name="MenuButton" type="Button" parent="UILayer/LevelComplete/VBoxContainer/VBoxContainer" unique_id=1757416635]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_1448s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ds0tp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uygrl")
+text = "Return to menu"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/LevelComplete/VBoxContainer" unique_id=2125402189]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="UILayer/LevelComplete/VBoxContainer" unique_id=120220027]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_g30sg")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=356863740]
 texture_filter = 1
+position = Vector2(-640, -360)
 scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAD//wgAAAAIAAUAAAD//wcAAAAIAAUAAAD//wYAAAAIAAUAAAD//wUAAAAIAAUAAAD//wQAAAAIAAUAAAD//wMAAAAIAAUAAAD//wIAAAAIAAUAAAD//wEAAAAIAAUAAAD//wAAAAAIAAUAAAD/////AAAIAAUAAAAAAP//AAAIAAUAAAABAP//AAAIAAUAAAACAP//AAAIAAUAAAADAP//AAAIAAUAAAAEAP//AAAIAAUAAAAFAP//AAAIAAUAAAAGAP//AAAIAAUAAAAHAP//AAAIAAUAAAAIAP//AAAIAAUAAAAJAP//AAAIAAUAAAAKAP//AAAIAAUAAAALAP//AAAIAAUAAAAMAP//AAAIAAUAAAANAP//AAAIAAUAAAAOAP//AAAIAAUAAAAPAP//AAAIAAUAAAAQAP//AAAIAAUAAAAQAAAAAAAIAAUAAAAQAAEAAAAIAAUAAAAQAAIAAAAIAAUAAAAQAAMAAAAIAAUAAAAQAAQAAAAIAAUAAAAQAAUAAAAIAAUAAAAQAAYAAAAIAAUAAAAQAAcAAAAIAAUAAAAQAAgAAAAIAAUAAAAQAAkAAAAIAAUAAAAPAAkAAAAIAAUAAAAOAAkAAAAIAAUAAAANAAkAAAAIAAUAAAAMAAkAAAAIAAUAAAALAAkAAAAIAAUAAAAKAAkAAAAIAAUAAAAJAAkAAAAIAAUAAAAIAAkAAAAIAAUAAAAHAAkAAAAIAAUAAAAGAAkAAAAIAAUAAAAFAAkAAAAIAAUAAAAEAAkAAAAIAAUAAAADAAkAAAAIAAUAAAACAAkAAAAIAAUAAAABAAkAAAAIAAUAAAAAAAkAAAAIAAUAAAD//wkAAAAIAAUAAAA=")
 tile_set = ExtResource("1_t7h1v")
 
 [node name="Decor" type="TileMapLayer" parent="." unique_id=602132896]
 texture_filter = 1
+position = Vector2(-640, -360)
 scale = Vector2(5, 5)
 tile_set = ExtResource("1_t7h1v")
 
 [node name="Decor2" type="TileMapLayer" parent="." unique_id=1606357100]
 texture_filter = 1
+position = Vector2(-640, -360)
 scale = Vector2(5, 5)
 tile_set = ExtResource("1_t7h1v")
 
 [node name="remy" parent="." unique_id=1970152106 instance=ExtResource("2_e06xn")]
-position = Vector2(241, 395)
+position = Vector2(-310, 87)
 
 [node name="Cheese" parent="." unique_id=955090490 instance=ExtResource("3_e273j")]
-position = Vector2(942, 363)
+position = Vector2(391, 55)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1688840238]
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1524262618]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_fypjr")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=504419725]
+script = ExtResource("6_hbq6r")
+tween_resource = SubResource("Resource_g30sg")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[connection signal="pressed" from="UILayer/GameOver/VBoxContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UILayer/GameOver/VBoxContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="UILayer/LevelComplete/VBoxContainer/VBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="UILayer/LevelComplete/VBoxContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="died" from="remy" to="." method="_on_remy_died"]
+[connection signal="cheese_got" from="Cheese" to="." method="_on_cheese_cheese_got"]
